@@ -20,13 +20,13 @@ public class Calculator {
             System.out.println(" * for multiplikation");
             System.out.println(" / for division");
             System.out.println(" q for quit");
-            op = input.next().charAt(0);
+            op = input.next().toLowerCase().charAt(0);
 
             if (op == 'q') break;
 
-            num1 = inputDouble("Write first number : ");
+            num1 = inputDouble("Skriv det første tal: ");
 
-            num2 = inputDouble("Write second number : ");
+            num2 = inputDouble("Skriv det andet tal: ");
 
             switch (op) {
                 case '+':
@@ -42,11 +42,11 @@ public class Calculator {
                     result = num1 / num2;
                     break;
                 default:
-                    System.out.println("Ugyldig oprator (regne tegn)");
+                    System.out.println("Ugyldig operator (regne tegn)");
                     input.nextLine();
                     continue;
             } //switch end
-            System.out.print("RESULT = " + result);
+            System.out.print("Resultat = " + result);
             System.out.println();
 
         }// while løkke slut
@@ -63,7 +63,7 @@ public class Calculator {
                 num = input.nextDouble();
                 ok = true;
             } catch (InputMismatchException e) {
-                System.out.println("wrong input, try again");
+                System.out.println("Forkert input, prøv igen");
             }
         } while (!ok);
         return num;
